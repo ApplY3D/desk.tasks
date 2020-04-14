@@ -1,0 +1,11 @@
+.tag{
+    margin-left: 7px;
+    font-size: 14px;
+    border-radius: 2px;
+    padding: 0px 10px 0px 10px;
+    font-weight: 700;
+    // height: 14px;
+    &_exam{
+        background-color: $exam-color;
+    }
+}

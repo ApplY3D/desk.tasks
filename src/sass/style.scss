@@ -2,9 +2,6 @@
 @import 'libs/font';
 @import 'base/mixins';
 @import 'base/variables';
-@import 'blocks/main-column';
-@import 'blocks/switch';
-@import 'blocks/checkbox';
 
 *{
     font-family: 'CenturyGothic';
@@ -23,5 +20,8 @@ body{
 // .container{
 //     min-height: 100%;
 // }
-
+@import 'blocks/main-column';
+@import 'blocks/switch';
+@import 'blocks/checkbox';
+@import 'blocks/tags';
 @import 'base/media';
