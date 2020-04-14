@@ -1,0 +1,25 @@
+@import 'libs/_bootstrap-reboot.min';
+@import 'libs/_font';
+@import 'base/mixins';
+@import 'base/variables';
+@import 'blocks/main-column';
+
+*{
+    font-family: 'Century Gothic';
+}
+
+// .container {
+//     max-width: 950px;
+//     margin: 0 auto;
+// }
+
+body{
+    min-height: 1080px;
+    padding-top: 150px;
+    background: linear-gradient(to top, #fad0c4 0%, #ffd1ff 100%) center (center/cover) no-repeat;
+}
+// .container{
+//     min-height: 100%;
+// }
+
+@import 'base/media';
