@@ -1,0 +1,124 @@
+// .switch,
+// .switch-label,
+// .switch-slider {
+//     width: 154px;
+//     height: 54px;
+// }
+
+// .switch {
+//     position: relative;
+//     display: inline-block;
+// }
+
+// .switch-check {
+//     position: absolute;
+//     opacity: 0;
+// }
+
+// .switch-label,
+// .switch-slider {
+//     position: absolute;
+//     top: 0;
+// }
+
+// .switch-label {
+//     left: 0;
+//     text-indent: -9999px;
+// }
+
+// .switch-slider {
+//     border-radius: 27px;
+//     box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1) inset,
+//     0 0 4px rgba(0, 0, 0, 0.5) inset,
+//     0 5px 4px 1px rgba(0, 0, 0, 0.3) inset,
+//     0 27px 0 rgba(0, 0, 0, 0.07) inset;
+//     transition: width 10ms linear;
+// }
+
+// .switch-slider-on {
+//     left: 0;
+//     width: 54px;
+//     background: #369AEE;
+// }
+
+// .switch-slider-off {
+//     right: 0;
+//     background: #FFF;
+// }
+
+// .switch-slider-off:after {
+//     position: absolute;
+//     top: 1px;
+//     left: 1px;
+//     width: 52px;
+//     height: 52px;
+//     border-radius: 50%;
+//     background: #E5E5E5;
+//     background: linear-gradient(#D0D0D0, #FDFDFD);
+//     box-shadow: 0 0 2px 2px #FFF inset,
+//     0 0 4px 1px rgba(0, 0, 0, 0.6);
+//     content: '';
+// }
+
+// .switch-label:active .switch-slider-off:after,
+// .switch-check:focus + .switch-label .switch-slider-off:after {
+//     background: #D5D5D5;
+//     background: linear-gradient(#C8C8C8, #E4E4E4);
+// }
+
+// .switch-check:checked + .switch-label .switch-slider-on {
+//     width: 154px;
+// }
+
+// .switch-check:checked + .switch-label .switch-slider-off {
+//     width: 54px;
+// }
+.switch-theme__block{
+    position: relative;
+    width: 50px;
+    input[type=checkbox]{
+        height: 0;
+        width: 0;
+        visibility: hidden;
+    }
+
+    label {
+        box-shadow: inset 1px 1px 1px 1px rgba($color: #000000, $alpha: .2);
+        cursor: pointer;
+        text-indent: -9999px;
+        width: 50px;
+        height: 22px;
+        background: linear-gradient(to top, #fad0c4 0%, #ffd1ff 100%) center (center/cover) no-repeat;
+        display: block;
+        border-radius: 100px;
+        position: absolute;
+        top:0;
+        left:0;
+    }
+
+    label:after {
+        content: '';
+        box-shadow: 1px 1px 1px 1px rgba($color: #000000, $alpha: .2);
+        position: absolute;
+        top: 2px;
+        left: 5px;
+        width: 18px;
+        height: 18px;
+        background: #fff;
+        border-radius: 90px;
+        transition: 0.3s;
+    }
+
+    input:checked + label {
+        background: #bada55;
+    }
+
+    input:checked + label:after {
+        left: calc(100% - 5px);
+        transform: translateX(-100%);
+    }
+
+    label:active:after {
+        width: 20px;
+    }
+}

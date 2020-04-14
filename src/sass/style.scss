@@ -1,11 +1,13 @@
 @import 'libs/_bootstrap-reboot.min';
-@import 'libs/_font';
+@import 'libs/font';
 @import 'base/mixins';
 @import 'base/variables';
 @import 'blocks/main-column';
+@import 'blocks/switch';
+@import 'blocks/checkbox';
 
 *{
-    font-family: 'Century Gothic';
+    font-family: 'CenturyGothic';
 }
 
 // .container {
@@ -14,9 +16,9 @@
 // }
 
 body{
-    min-height: 1080px;
     padding-top: 150px;
-    background: linear-gradient(to top, #fad0c4 0%, #ffd1ff 100%) center (center/cover) no-repeat;
+    padding-bottom: 150px;
+    background: linear-gradient(to top, $bg-gradient-1 0%, $bg-gradient-2 100%) center (center/cover) no-repeat;
 }
 // .container{
 //     min-height: 100%;
