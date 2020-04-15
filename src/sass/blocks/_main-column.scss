@@ -63,12 +63,17 @@
     align-items: center;
     margin-top: 16px;
     width: 100%;
-    height: 66px;
+    min-height: 66px;
     background-color: $item-color;
     border-radius: 10px;
     padding: 12px;
     font-weight: 700;
     box-shadow: inset 1px 1px 1px 1px rgba($color: #000000, $alpha: .3);
+    input{
+        box-shadow: inset 1px 1px 1px 1px rgba(0,0,0,.25);
+        border-radius: 7px;
+        border:none;
+    }
     &__wrapper{
         margin-left: 12px;
         display: flex;
@@ -98,6 +103,7 @@
         flex-direction: row;
         height: 50%;
         align-items: center;
+        flex-wrap: wrap;
         color: $link-grey;
         font-size: 14.5px;
         position: relative;
@@ -120,6 +126,9 @@
         width: 16px;
         margin-left: 8px;
         line-height: 15px;
+        path{
+            fill:$link-grey;
+        }
         a{
             img{
                 width: 100%;
@@ -131,7 +140,10 @@
         line-height: 0;
         font-weight: 500;
         margin-left: 8px;
-        opacity: 0.5;
+        // opacity: 0.5;
+        path{
+            fill:$link-grey;
+        }
         a{
             display: block;
             height: 16px;
@@ -140,5 +152,38 @@
                 width: 100%;
             }
         }
+    }
+    &__dismiss{
+        path{
+            fill:$dismiss;
+        }
+    }
+    &__confirm{
+        button{
+            background-color: unset;
+            border:none;
+            display: inline;
+            width: 20px;
+            height: 20px;
+            padding: 0;
+        }
+        svg{
+            width: 100%;
+        }
+        path{
+            fill:$confirm;
+        }
+    }
+}
+#new-item-form{
+    input{
+        width: auto;
+        padding:2px 5px 2px 5px;
+    }
+    input.error{
+        box-shadow:inset 1px 1px 1px red;
+    }
+    input.valid{
+        box-shadow:inset 2px 2px 1px green;
     }
 }

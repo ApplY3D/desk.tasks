@@ -5,3 +5,7 @@
     border-radius: 4px;
     background: url($property) center (center/cover) no-repeat
 }
+@mixin defaultTags($color,$amount){
+    box-shadow: 0px 0px 0px 1px darken($color, $amount);
+    background-color: $color;
+}
