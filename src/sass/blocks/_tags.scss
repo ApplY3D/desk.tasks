@@ -6,16 +6,16 @@
     font-weight: 700;
     // height: 14px;
     &_exam{
-        @include defaultTags($exam-color,25%);
+        @include defaultTags($exam-color,$exam-border);
     }
     &_lab{
-        @include defaultTags($lab-color,45%);
+        @include defaultTags($lab-color,$lab-border);
     }
     &_practice{
-        @include defaultTags($practice-color,30%);
+        @include defaultTags($practice-color,$practice-border);
     }
     &_lect{
-        @include defaultTags($lect-color,45%);
+        @include defaultTags($lect-color,$lect-border);
     }
 }
 
