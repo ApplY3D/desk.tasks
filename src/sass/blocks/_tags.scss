@@ -9,3 +9,15 @@
         background-color: $exam-color;
     }
 }
+
+.tag-lang{
+    // border-radius: 8px;
+    // padding-left: 3px;
+    // padding-right: 3px;
+    &_english{
+        @include languageTags('../icons/tags/uk.svg');
+    }
+    &_deutsch{
+        @include languageTags('../icons/tags/deutsch.svg');
+    }
+}
