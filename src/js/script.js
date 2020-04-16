@@ -74,16 +74,22 @@ $(document).ready(function(){
     });
     
 //ДОБАВЛЕНИЕ НА СТРАНИЦУ ПУСТЫШКИ С ИНПУТАМИ
-    $('.add-item').on('click',function(e){
-        e.preventDefault();
+    // $('.add-item').on('click',function(e){
+    //     e.preventDefault();
         
-        if ($('#new-item').length){
-        }else{
-            $('.add-item').css( 'pointer-events', 'none' );
-            $.get("new-item.html", function (data) {
-                $(".main-column__body").append(data);
-            });
-        }
+    //     if ($('#new-item').length){
+    //     }else{
+    //         $('.add-item').css( 'pointer-events', 'none' );
+    //         $.get("new-item.html", function (data) {
+    //             $(".main-column__body").append(data);
+    //         });
+    //     }
+    // });
+
+        $('.add-item').on('click',function(e){
+        e.preventDefault();
+        $('#new-item').css( 'display', 'flex' );
+
     });
 
 //МАНИПУЛЯЦИИ С КНОПКАМИ ПУСТЫШКИ
@@ -94,4 +100,9 @@ $(document).ready(function(){
     //         $('#new-item').remove();
     //     });
     // }
+
+    $('#new-item-dismiss').on('click', function(e){
+        e.preventDefault();
+        $('#new-item').css( 'display', 'none' );
+    });
 });
