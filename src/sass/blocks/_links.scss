@@ -8,11 +8,11 @@
     pointer-events: none;
     cursor: default;
     path{
-        fill: $link-disabled;
+        fill: var(--link-disabled);
     }
 }
 .link-active{
     path{
-        fill: $link-active;
+        fill: var(--link-active);
     }
 }

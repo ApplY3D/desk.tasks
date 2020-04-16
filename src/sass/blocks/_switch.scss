@@ -88,7 +88,7 @@
         text-indent: -9999px;
         width: 50px;
         height: 22px;
-        background: linear-gradient(to top, #fad0c4 0%, #ffd1ff 100%) center (center/cover) no-repeat;
+        background: linear-gradient(to top, var(--bg-gradient-1) 0%, var(--bg-gradient-2) 100%) center (center/cover) no-repeat;
         display: block;
         border-radius: 100px;
         position: absolute;
@@ -104,13 +104,13 @@
         left: 5px;
         width: 18px;
         height: 18px;
-        background: #fff;
+        background: var(--item-color);
         border-radius: 90px;
         transition: 0.3s;
     }
 
     input:checked + label {
-        background: #bada55;
+        background: linear-gradient(to top, var(--bg-gradient-1) 0%, var(--bg-gradient-2) 100%) center (center/cover) no-repeat;
     }
 
     input:checked + label:after {

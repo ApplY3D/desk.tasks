@@ -60,6 +60,23 @@ $(document).ready(function(){
         }
     });
 
+//ДОБАВЛЕНИЕ СТАТУСА ЧЕКБОКСОВ В ЛОКАЛ
+    // function checkboxStorageCheck(){
+    //     itemsId=[];
+    //     $( ".column-item" ).each(function() {  
+    //     itemsId.push($( this ).attr( "id" ));
+    //     });
+    //     function diff(arr, arr2) {
+    //         itemsToRemove = arr.filter(function(i) {return arr2.indexOf(i) < 0;});
+    //         newStorage = subjectsDone.filter( ( el ) => !itemsToRemove.includes( el ) );
+    //     };    
+    //     subjectsDone=localStorage.getItem('subjectsDone');
+    //     subjectsDone=subjectsDone.replace(/'/g, '"');
+    //     subjectsDone=JSON.parse(subjectsDone);
+    //     console.log(diff(subjectsDone, itemsId));
+    // }
+    // checkboxStorageCheck()
+
 //ФУНКЦИЯ ДЛЯ ПРОВЕРКИ СОДЕРЖИМОГО column-item__big-descr ЧТОБЫ ПРОЯВИТЬ КНОПКУ
     $('.column-item__big-descr').each(function( index ) {
         if ($(this).text()){
@@ -103,6 +120,9 @@ $(document).ready(function(){
 
     $('#new-item-dismiss').on('click', function(e){
         e.preventDefault();
+        $('#new-item-form').trigger('reset');
         $('#new-item').css( 'display', 'none' );
+        $('[name="title__subject"] ,[name="subtitle__descr"] ,[name="subtitle__date"] ,[name="subtitle__big-descr"]').removeClass('valid');
+        $('[name="title__subject"] ,[name="subtitle__descr"] ,[name="subtitle__date"] ,[name="subtitle__big-descr"]').removeClass('error');
     });
 });

@@ -1,24 +1,62 @@
-$background-color: #e6e6e6;
-$item-color: white;
-$link-grey: #6b6b6b;
-$link-disabled: #cacaca;
-$link-active: #007bff;
+html{
+
+    &[data-theme-style='normal']{
+        --background-color: #e6e6e6;
+        --item-color: white;
+        --link-grey: #6b6b6b;
+        --link-disabled: #cacaca;
+        --link-active: #007bff; //#2196F3
 
 
-$bg-gradient-2: #ffd1ff;
-$bg-gradient-1: #fad0c4;
+        --bg-gradient-2: #ffd1ff;
+        --bg-gradient-1: #fad0c4;
+
+        --checkmark-color: #eee;
+        --checkmark-hover: #ccc;
+        --input-color: white;
+
+        --dismiss: red;
+        --confirm: green;
 
 
-$dismiss: red;
-$confirm: green;
+        --exam-color: #ffabfb;
+        --lab-color: #fff4b9;
+        --practice-color: #ffd8b9;
+        --lect-color: #b9fff4;
 
+        --exam-border: #ff2cf5;
+        --lab-border: #d3b100;
+        --practice-border: #ff8320;
+        --lect-border: #00d3b1;
+    }
 
-$exam-color: #ffabfb;
-$lab-color: #fff4b9;
-$practice-color: #ffd8b9;
-$lect-color: #b9fff4;
+    &[data-theme-style='dark']{
+        --font-color:#f4f4f4;
 
-$exam-border: #ff2cf5;
-$lab-border: #d3b100;
-$practice-border: #ff8320;
-$lect-border: #00d3b1;
+        --background-color: #40303e;
+        --item-color: #5e485c;
+        --link-grey: #d787d3;
+        --link-disabled: #342b33;
+        --link-active: #b560b0;
+
+        --bg-gradient-2: #210939;
+        --bg-gradient-1: #3d062e;
+        
+        --checkmark-color: #4f1743;
+        --checkmark-hover: #6c235c;
+        --input-color: #895e85;
+
+        --dismiss: #ff7e7e;
+        --confirm: #60e860;
+
+        --exam-color: #84267f;
+        --lab-color: #645818;
+        --practice-color: #6a4324;
+        --lect-color: #246e62;
+
+        --exam-border: #bd24b5;
+        --lab-border: #a48c15;
+        --practice-border: #dd7320;
+        --lect-border: #299080;
+    }
+}

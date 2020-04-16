@@ -1,6 +1,6 @@
 .main-column{
     border-radius: 15px 15px 5px 5px;
-    background-color: $background-color;
+    background-color: var(--background-color);
     box-shadow: 0px 0px 5px rgba($color: #000000, $alpha: .3);
     min-height: 265px;
     max-width: 540px;
@@ -12,8 +12,9 @@
         flex-direction: row;
         border-radius: 15px;
         box-shadow: 0px 5px 3px rgba($color: #000000, $alpha: .1);
-        background-color: $item-color;
+        background-color: var(--item-color);
         height: 109px;
+        transition: 0.1s all ease;
         &-left{
             display: flex;
             flex-direction: column;
@@ -48,13 +49,31 @@
         margin-top: 32px;
         font-weight: 700;
         a{
-            color: $link-grey;
+            color: var(--link-grey);
         }
     }
     &__calendar{
         height: 17px;
         width: 17px;
-        color:$link-grey;
+        color: var(--link-grey);
+    }
+    &__donate{
+        width: 50px;
+        height: 22px;
+        font-size: 12px;
+        font-weight: 700;
+        border-radius: 2px;
+        border: 1px solid rgba($color: #000000, $alpha: .2);
+        padding: 1px;
+        transition: 0.1s all;
+        background-color: var(--item-color);
+        color: var(--font-color);
+        &:active{
+            box-shadow: inset 1px 1px 1px 1px rgba(0,0,0,.2);
+            padding: 3px;
+            padding-left: 4px;
+            font-size: 11px;
+        }
     }
 }
 .column-item{
@@ -64,15 +83,15 @@
     margin-top: 16px;
     width: 100%;
     // min-height: 66px;
-    background-color: $item-color;
+    background-color: var(--item-color);
     border-radius: 10px;
     padding: 12px;
     font-weight: 700;
     box-shadow: inset 1px 1px 1px 1px rgba($color: #000000, $alpha: .3);
-    transition: 0.5s all ease;
+    transition: 0.1s all ease;
     &_completed{
         transition: 0.5s all ease;
-        background: linear-gradient(to top, $bg-gradient-1 0%, $bg-gradient-2 40%) center (center/cover) no-repeat;
+        background: linear-gradient(to top, var(--bg-gradient-1) 0%, var(--bg-gradient-2) 40%) center (center/cover) no-repeat;
     }
     input{
         box-shadow: inset 1px 1px 1px 1px rgba(0,0,0,.25);
@@ -104,7 +123,7 @@
         }
     }
     &__big-descr{
-        background-color: $background-color;
+        background-color: var(--background-color);
         font-weight: 500;
         padding: 11px;
         display: none;
@@ -120,7 +139,7 @@
         height: 50%;
         align-items: center;
         flex-wrap: wrap;
-        color: $link-grey;
+        color: var(--link-grey);
         font-size: 14.5px;
         position: relative;
     }
@@ -143,7 +162,7 @@
         margin-left: 8px;
         line-height: 15px;
         path{
-            fill:$link-grey;
+            fill: var(--link-grey);
         }
         a{
             img{
@@ -158,7 +177,7 @@
         margin-left: 8px;
         // opacity: 0.5;
         path{
-            fill:$link-grey;
+            fill: var(--link-grey);
         }
         a{
             display: block;
@@ -171,7 +190,7 @@
     }
     &__dismiss{
         path{
-            fill:$dismiss;
+            fill: var(--dismiss);
         }
     }
     &__confirm{
@@ -187,7 +206,7 @@
             width: 100%;
         }
         path{
-            fill:$confirm;
+            fill: var(--confirm);
         }
     }
 }
@@ -196,13 +215,16 @@
 }
 #new-item-form{
     input{
+        background-color: var(--input-color);
+        color: var(--font-color);
+        margin-top: 3px;
         width: auto;
         padding:2px 5px 2px 5px;
     }
     input.error{
-        box-shadow:inset 1px 1px 1px red;
+        box-shadow:inset 1px 1px 1px var(--dismiss);
     }
     input.valid{
-        box-shadow:inset 2px 2px 1px green;
+        box-shadow:inset 2px 2px 1px var(--confirm);
     }
 }
