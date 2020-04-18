@@ -295,10 +295,11 @@
                             <span class="checkmark"></span>
                         </label> -->
                         <div class="column-item__wrapper">
-                            <form action="" id="new-item-form">
+                            <form action="POST" id="new-item-form">
+                                <h2>Добавление новой карточки</h2>
                             <div class="column-item__title">
                                 <div class="column-item__title-left">
-                                    <input class="column-item__subject" name="title__subject" maxlength="12" placeholder="Предмет...">
+                                    <input form="new-item-form" class="column-item__subject" name="title__subject" maxlength="12" placeholder="Предмет...">
                                     <!-- <div class="tag-lang tag-lang_english"></div> -->
                                     <!-- <div class="tag  tag_exam">Экзамен</div> -->
                                 </div>
@@ -307,11 +308,14 @@
                                     <div class="column-item__external column-item__dismiss"> <a id="new-item-dismiss" href="#"><svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="times-circle" class="svg-inline--fa fa-times-circle fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm0 448c-110.5 0-200-89.5-200-200S145.5 56 256 56s200 89.5 200 200-89.5 200-200 200zm101.8-262.2L295.6 256l62.2 62.2c4.7 4.7 4.7 12.3 0 17l-22.6 22.6c-4.7 4.7-12.3 4.7-17 0L256 295.6l-62.2 62.2c-4.7 4.7-12.3 4.7-17 0l-22.6-22.6c-4.7-4.7-4.7-12.3 0-17l62.2-62.2-62.2-62.2c-4.7-4.7-4.7-12.3 0-17l22.6-22.6c4.7-4.7 12.3-4.7 17 0l62.2 62.2 62.2-62.2c4.7-4.7 12.3-4.7 17 0l22.6 22.6c4.7 4.7 4.7 12.3 0 17z"></path></svg></a> </div>
                                 </div>
                             </div>
-                            <div class="column-item__big-descr" name="subtitle__big-descr"></div>
+                            <div class="column-item___big-descr-wrapper">
+                                <textarea form="new-item-form" type="text" id="big-descr" name="column-item__big-descr_input" placeholder="Дополнительое описание..."></textarea>
+                            </div>
                             <div class="column-item__subtitle">
-                                <input class="column-item__descr" name="subtitle__descr" maxlength="20" placeholder="Что сделать..." >
+                                <input form="new-item-form" class="column-item__descr" name="subtitle__descr" maxlength="20" placeholder="Что сделать..." >
                                 <div class="column-item__calendar"><a id="new-item-calendar" href="#"><svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="calendar-alt" class="svg-inline--fa fa-calendar-alt fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M148 288h-40c-6.6 0-12-5.4-12-12v-40c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12zm108-12v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm96 0v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm-96 96v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm-96 0v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm192 0v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm96-260v352c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V112c0-26.5 21.5-48 48-48h48V12c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v52h128V12c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v52h48c26.5 0 48 21.5 48 48zm-48 346V160H48v298c0 3.3 2.7 6 6 6h340c3.3 0 6-2.7 6-6z"></path></svg></a></div>
-                                <input class="column-item__date" name="subtitle__date" placeholder="DD/MM/YYYY">
+                                <input form="new-item-form" class="column-item__date" name="subtitle__date" placeholder="DD/MM/YYYY">
+                                <!-- <input type='text' class='datepicker-here' /> -->
                             </div>
                         </form>
                         </div>
@@ -322,6 +326,20 @@
         </div>
     </div>
     
+
+    <div class="overlay">
+        <div class="donate-modal">
+            <div class="donate-modal__header">
+                <div class="donate-modal__header-text">Донатики</div>
+                <div class="column-item__external column-item__dismiss donate-modal__dismiss-popup"> <a id="donate-popup-dismiss" href="#"><svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="times-circle" class="svg-inline--fa fa-times-circle fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm0 448c-110.5 0-200-89.5-200-200S145.5 56 256 56s200 89.5 200 200-89.5 200-200 200zm101.8-262.2L295.6 256l62.2 62.2c4.7 4.7 4.7 12.3 0 17l-22.6 22.6c-4.7 4.7-12.3 4.7-17 0L256 295.6l-62.2 62.2c-4.7 4.7-12.3 4.7-17 0l-22.6-22.6c-4.7-4.7-4.7-12.3 0-17l62.2-62.2-62.2-62.2c-4.7-4.7-4.7-12.3 0-17l22.6-22.6c4.7-4.7 12.3-4.7 17 0l62.2 62.2 62.2-62.2c4.7-4.7 12.3-4.7 17 0l22.6 22.6c4.7 4.7 4.7 12.3 0 17z"></path></svg></a> </div>
+            </div>
+            <div class="donate-modal__body">
+                <div class="donate-modal__body-text">Можно помочь оплатить хостинг донатиком или просто скинуть решенную домашку 😋</div>
+                <div class="donate-modal__card donate-bold">4377 7237 4937 7135</div>
+                <div class="donate-modal__qiwi donate-bold"> <a href="qiwi.com/n/GENGE280">Qiwi</a> </div>
+            </div>
+        </div>
+    </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="js/jquery.validate.min.js"></script>
     <script src="js/jquery.maskedinput.min.js"></script>

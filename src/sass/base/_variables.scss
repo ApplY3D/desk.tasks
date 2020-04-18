@@ -1,9 +1,13 @@
 html{
 
     &[data-theme-style='normal']{
+        --font-color:black;
+
+        --column-item-shadow: rgba(0,0,0,0.3);
+
         --background-color: #e6e6e6;
         --item-color: white;
-        --link-grey: #6b6b6b;
+        --link-grey: #6a2f67; // #6b6b6b
         --link-disabled: #cacaca;
         --link-active: #007bff; //#2196F3
 
@@ -18,6 +22,7 @@ html{
         --dismiss: red;
         --confirm: green;
 
+        --qiwi-color: #FF8C00;
 
         --exam-color: #ffabfb;
         --lab-color: #fff4b9;
@@ -26,12 +31,14 @@ html{
 
         --exam-border: #ff2cf5;
         --lab-border: #d3b100;
-        --practice-border: #ff8320;
+        --practice-border: #ff8b02;
         --lect-border: #00d3b1;
     }
 
     &[data-theme-style='dark']{
         --font-color:#f4f4f4;
+
+        --column-item-shadow: rgba(0,0,0,0);
 
         --background-color: #40303e;
         --item-color: #5e485c;
@@ -48,6 +55,8 @@ html{
 
         --dismiss: #ff7e7e;
         --confirm: #60e860;
+
+        --qiwi-color: #FF8C00;
 
         --exam-color: #84267f;
         --lab-color: #645818;
