@@ -9,6 +9,7 @@
         padding: 16px;
         display: flex;
         justify-content: space-between;
+        position: relative;
         flex-direction: row;
         border-radius: 15px;
         box-shadow: 0px 5px 3px rgba($color: #000000, $alpha: .1);
@@ -56,6 +57,12 @@
         height: 17px;
         width: 17px;
         color: var(--link-grey);
+        .auto-jsCalendar{
+            position: absolute;
+            right: 5%;
+            top: 85%;
+            z-index: 1;
+        }
     }
     &__donate{
         width: 50px;
@@ -73,6 +80,9 @@
             padding: 3px;
             padding-left: 4px;
             font-size: 11px;
+        }
+        &:focus{
+            outline: none;
         }
     }
 }
@@ -151,6 +161,7 @@
         position: relative;
     }
     &__subject{
+        margin-right: 7px;
         font-size: 19px;
     }
 
@@ -166,8 +177,14 @@
         width: 16px;
         margin-left: 8px;
         line-height: 15px;
-        path{
-            fill: var(--link-grey);
+        a{
+            color:unset;
+            svg{
+                path{
+                    color: unset;
+                    fill: var(--link-grey);
+                }
+            }
         }
         a{
             img{
@@ -175,6 +192,9 @@
                 height: 100%;
             }
         }
+    }
+    #mainCalendarLink{
+        
     }
     &__info, &__external{
         line-height: 0;
@@ -253,4 +273,15 @@
     width: 100%;
     overflow-y: hidden; /* prevents scroll bar flash */
     padding:4px 6px 2px 6px;; /* prevents text jump on Enter keypress */
+}
+
+#mainCalendarLink{
+    path{
+        fill: var(--link-grey);
+    }
+    &.link-active{
+        path{
+            fill: var(--link-active);
+        }
+    }
 }

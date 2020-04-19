@@ -60,7 +60,7 @@ $(document).ready(function () {
         }
     });
 
-
+    //скролл в создании карточки => описание
     $('.column-item__big-descr-wrapper').on( 'keydown', 'textarea', function (e){
         $(this).css('height', 'auto' );
         $(this).height( this.scrollHeight );
@@ -84,6 +84,7 @@ $(document).ready(function () {
     //     console.log(diff(subjectsDone, itemsId));
     // }
     // checkboxStorageCheck()
+    
     //КНОПКА DONATE
 
     $('.main-column__donate').on('click', function () {
@@ -120,9 +121,23 @@ $(document).ready(function () {
     //     }
     // });
 
+    function clearNewItemForm(){
+        $('#new-item-form').trigger('reset');
+        $('#big-descr').val('');
+        $('#new-item').css('display', 'none');
+        $('[name="title__subject"] ,[name="subtitle__descr"] ,[name="subtitle__date"] ,[name="subtitle__big-descr"]').removeClass('valid');
+        $('[name="title__subject"] ,[name="subtitle__descr"] ,[name="subtitle__date"] ,[name="subtitle__big-descr"]').removeClass('error');
+        $("[name='title__tagLang']").val('');
+        $('.languageLable').html('Язык');
+        $("[name='title__tag']").val('');
+        $('.tagLable').html('Тэг');
+    }
+
     $('.add-item').on('click', function (e) {
+        clearNewItemForm();
         e.preventDefault();
         $('#new-item').css('display', 'flex');
+        $('.add-item').css('pointer-events', 'none');
 
     });
 
@@ -137,11 +152,54 @@ $(document).ready(function () {
 
     $('#new-item-dismiss').on('click', function (e) {
         e.preventDefault();
-        $('#new-item-form').trigger('reset');
-        $('#big-descr').val('');
-        $('#new-item').css('display', 'none');
-        $('[name="title__subject"] ,[name="subtitle__descr"] ,[name="subtitle__date"] ,[name="subtitle__big-descr"]').removeClass('valid');
-        $('[name="title__subject"] ,[name="subtitle__descr"] ,[name="subtitle__date"] ,[name="subtitle__big-descr"]').removeClass('error');
+        clearNewItemForm();
+        $('.add-item').css('pointer-events', 'unset');
     });
+
+    //добавление выбираемых тегов в интпут и подставление тэгов в форму
+    $('.tag_selector').on('click', function (e){
+        e.preventDefault();
+        let id=$(this).children().attr('id');
+        $("[name='title__tag']").val(id);
+        $('.tagLable').html($(this).html());
+    });
+    $('.tag_clear').on('click', function(e){
+        e.preventDefault();
+        $("[name='title__tag']").val('');
+        $('.tagLable').html('Тэг');
+    });
+    //добавление выбираемых тегов в интпут с языками
+    $('.tagLang_selector').on('click', function (e){
+        e.preventDefault();
+        let id=$(this).children().attr('id');
+        $("[name='title__tagLang']").val(id);
+        $('.languageLable').html($(this).html());
+    });
+    $('.tagLang_clear').on('click', function(e){
+        e.preventDefault();
+        $("[name='title__tagLang']").val('');
+        $('.languageLable').html('Язык');
+    });
+
+    //появление календаря в шапке
+    $('#mainCalendarLink').on('click', function (e) {
+        e.preventDefault();
+        // $('#inTopCalendar').toggleClass('calendar-inactive');
+        $('#inTopCalendar').fadeToggle('fast');
+        $(this).toggleClass('link-active');
+    });
+
+    //скрытие календаря по нажатию на пустом месте
+    // $(function($){
+    //     $(document).mouseup(function (e){ // событие клика по веб-документу
+    //       var calendar = $("#inTopCalendar");
+    //       var calendarButton = $('#mainCalendarLink') // тут указываем ID элемента
+    //       if (!calendar.is(e.target) && !calendarButton.is(e.target) // если клик был не по нашему блоку и не по ссылке
+    //           && calendar.has(e.target).length === 0) { // и не по его дочерним элементам
+    //         calendar.fadeOut('fast'); // скрываем его
+    //       }
+    //     });
+    //   });
+
 });
 

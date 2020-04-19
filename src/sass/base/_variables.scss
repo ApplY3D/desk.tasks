@@ -24,15 +24,18 @@ html{
 
         --qiwi-color: #FF8C00;
 
-        --exam-color: #ffabfb;
+        --exam-color: #ffb6fc;
         --lab-color: #fff4b9;
         --practice-color: #ffd8b9;
         --lect-color: #b9fff4;
+        --hometask-color: #c5e7ff;
+
 
         --exam-border: #ff2cf5;
         --lab-border: #d3b100;
         --practice-border: #ff8b02;
         --lect-border: #00d3b1;
+        --hometask-border: #48aaf0;
     }
 
     &[data-theme-style='dark']{
@@ -58,14 +61,16 @@ html{
 
         --qiwi-color: #FF8C00;
 
-        --exam-color: #84267f;
+        --exam-color: #7e2479;
         --lab-color: #645818;
         --practice-color: #6a4324;
         --lect-color: #246e62;
+        --hometask-color: #13496f;
 
-        --exam-border: #bd24b5;
+        --exam-border: #bf2bb7;
         --lab-border: #a48c15;
         --practice-border: #dd7320;
         --lect-border: #299080;
+        --hometask-border: #2576b1;
     }
 }

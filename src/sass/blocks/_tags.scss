@@ -1,5 +1,4 @@
 .tag{
-    margin-left: 7px;
     font-size: 14px;
     border-radius: 2px;
     padding: 0px 10px 0px 10px;
@@ -17,6 +16,9 @@
     &_lect{
         @include defaultTags(var(--lect-color),var(--lect-border));
     }
+    &_hometask{
+        @include defaultTags(var(--hometask-color),var(--hometask-border))
+    }
 }
 
 .tag-lang{
@@ -24,9 +26,11 @@
     // padding-left: 3px;
     // padding-right: 3px;
     &_english{
+        margin-left: 0;
         @include languageTags('../icons/tags/uk.svg');
     }
     &_deutsch{
+        margin-left: 0;
         @include languageTags('../icons/tags/deutsch.svg');
     }
 }

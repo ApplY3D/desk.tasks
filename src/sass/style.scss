@@ -1,7 +1,9 @@
-@import 'libs/_bootstrap-reboot.min';
+@import 'libs/bootstrap-reboot.min';
+@import 'libs/bootstrap-popup';
 @import 'libs/font';
 @import 'base/mixins';
 @import 'base/variables';
+@import 'libs/jsCalendar.min';
 
 *{
     font-family: 'CenturyGothic';
@@ -28,18 +30,22 @@ body{
     color:var(--font-color);
     min-height: 100vh;
     padding-top: 150px;
-    padding-bottom: 150px;
     background: linear-gradient(to top, var(--bg-gradient-1) 0%, var(--bg-gradient-2) 100%) center (center/cover) no-repeat;
     
+}
+.container{
+    max-width: 940px;
+    margin: 0 auto;
 }
 // .container{
 //     min-height: 100%;
 // }
 
 @import 'blocks/main-column';
+@import 'blocks/footer';
 @import 'blocks/links';
 @import 'blocks/switch';
 @import 'blocks/checkbox';
-@import 'blocks/tags';
 @import 'blocks/overlay';
+@import 'blocks/tags';
 @import 'base/media';
