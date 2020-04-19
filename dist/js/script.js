@@ -201,5 +201,65 @@ $(document).ready(function () {
     //     });
     //   });
 
+    
+    var calendar = jsCalendar.new('#inTopCalendar', "now", {
+		"dayFormat": "DDD",
+		"firstDayOfTheWeek": "2",
+		"language": "ru"
+	});
+	// Make changes on the month element
+	calendar.onMonthRender(function(index, element, info) {
+		// Show month index
+		var month = index + 1;
+		element.textContent += ' (' + (month > 9 ? '' : '0') + month + '/' + (info.start.getYear() + 1900) + ')';
+	});
+	// Make changes on the day name elements
+	calendar.onDayRender(function(index, element, info) {
+		// If weekend, make it red
+		if (index == 0 || index == 6) {
+			element.style.color = '#c32525';
+		}
+	});
+	// Make changes on the date elements
+	calendar.onDateRender(function(date, element, info) {
+		// Make weekends bold and red
+		if (!info.isCurrent && (date.getDay() == 0 || date.getDay() == 6)) {
+			element.style.fontWeight = 'bold';
+			element.style.color = (info.isCurrentMonth) ? '#c32525' : '#ffb4b4';
+		}
+	});
+	// Refresh layout
+    calendar.refresh();
+    
+    $( "#inTopCalendar" ).draggable({ containment: ".main-column", scroll: false });
+    // var calendar = jsCalendar.new('.column-item__date', "now", {
+	// 	"dayFormat": "DDD",
+	// 	"firstDayOfTheWeek": "2",
+	// 	"language": "ru"
+	// });
+	// // Make changes on the month element
+	// calendar.onMonthRender(function(index, element, info) {
+	// 	// Show month index
+	// 	var month = index + 1;
+	// 	element.textContent += ' (' + (month > 9 ? '' : '0') + month + '/' + (info.start.getYear() + 1900) + ')';
+	// });
+	// // Make changes on the day name elements
+	// calendar.onDayRender(function(index, element, info) {
+	// 	// If weekend, make it red
+	// 	if (index == 0 || index == 6) {
+	// 		element.style.color = '#c32525';
+	// 	}
+	// });
+	// // Make changes on the date elements
+	// calendar.onDateRender(function(date, element, info) {
+	// 	// Make weekends bold and red
+	// 	if (!info.isCurrent && (date.getDay() == 0 || date.getDay() == 6)) {
+	// 		element.style.fontWeight = 'bold';
+	// 		element.style.color = (info.isCurrentMonth) ? '#c32525' : '#ffb4b4';
+	// 	}
+	// });
+	// // Refresh layout
+	// calendar.refresh();
+
 });
 

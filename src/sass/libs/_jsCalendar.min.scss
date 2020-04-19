@@ -238,10 +238,10 @@
 }
 
 .jsCalendar.material-theme thead .jsCalendar-title-name {
-    font-weight: 700;
-    border-bottom: 1px solid rgba(255, 255, 255, .4);
+    //font-weight: 700;
+    //border-bottom: 1px solid var(--link-grey);
     color: var(--font-color);
-    font-size: 16px;
+    font-size: 18px;
     left: 15px;
     position: absolute;
     right: 15px;
@@ -441,6 +441,16 @@
     background-color: #639000
 }
 
+
+#inTopCalendar{
+    width: 300px;
+    thead {
+        cursor: pointer;
+        .jsCalendar-title-row{
+            cursor: pointer;
+        }
+    }
+}
 .calendar-inactive{
     display:none;
 }
